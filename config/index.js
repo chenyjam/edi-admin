@@ -9,7 +9,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/edi-web/api': {
+        target: 'http://sd_test.sxjdfreight.com',  //目标接口域名
+        changeOrigin: true,  //是否跨域
+        // pathRewrite: {
+        //   '^/api': '/api'   //重写接口
+        // }
+      }
+    },
 
     // Various Dev Server settings
 

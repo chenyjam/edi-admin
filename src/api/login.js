@@ -1,12 +1,8 @@
 import request from '@/utils/request'
 
-export function loginByUsername(username, password) {
-  const data = {
-    username,
-    password
-  }
+export function login(data) {
   return request({
-    url: '/login/login',
+    url: '/sys/vs/public/login',
     method: 'post',
     data
   })
@@ -24,6 +20,13 @@ export function getUserInfo(token) {
     url: '/user/info',
     method: 'get',
     params: { token }
+  })
+}
+
+export function registerVisitor() {
+  return request({
+    url: '/sys/registerVisitor',
+    method: 'get'
   })
 }
 
