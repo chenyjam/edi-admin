@@ -198,7 +198,7 @@ function str2rstr_utf8(input) {
 function rstr2binl(input) {
   var output = Array(input.length >> 2)
   for (var i = 0; i < output.length; i++) { output[i] = 0 }
-  for (var k = 0; k < input.length * 8; k += 8) { output[i >> 5] |= (input.charCodeAt(k / 8) & 0xFF) << (k % 32) }
+  for (var k = 0; k < input.length * 8; k += 8) { output[k >> 5] |= (input.charCodeAt(k / 8) & 0xFF) << (k % 32) }
   return output
 }
 

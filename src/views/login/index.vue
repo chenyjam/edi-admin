@@ -3,7 +3,7 @@
 
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
       <div class="title-container">
-        <h3 class="title">EDI大客户自动开单系统</h3>
+        <h3 class="title">dddd</h3>
 
       </div>
 
@@ -72,8 +72,8 @@
 
 <script>
 // 'import { isvalidusername } from '@/utils/validate'
-import { registerVisitor, login } from '@/api/login'
-import { encryptByMd5 } from './md5.js'
+import { login } from '@/api/login'
+import { encryptByMd5 } from './md5'
 
 export default {
   name: 'Login',
@@ -112,7 +112,7 @@ export default {
     }
   },
   created() {
-    registerVisitor()
+    this.token()
   },
   destroyed() {
   },
@@ -123,6 +123,15 @@ export default {
       } else {
         this.passwordType = 'password'
       }
+    },
+    token() {
+      this.$store
+        .dispatch('GetTokenByRegisterVisitor')
+        .then(() => {
+        })
+        .catch(() => {
+          this.loading = false
+        })
     },
     handleLogin() {
       this.$refs.loginForm.validate(valid => {

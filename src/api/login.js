@@ -10,16 +10,15 @@ export function login(data) {
 
 export function logout() {
   return request({
-    url: '/login/logout',
+    url: '/sys/vs/public/logout',
     method: 'post'
   })
 }
 
-export function getUserInfo(token) {
+export function getUserInfo() {
   return request({
-    url: '/user/info',
-    method: 'get',
-    params: { token }
+    url: '/sys/users/getLoginUser',
+    method: 'get'
   })
 }
 
