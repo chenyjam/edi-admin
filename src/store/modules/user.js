@@ -13,7 +13,8 @@ const user = {
     roles: [],
     setting: {
       articlePlatform: []
-    }
+    },
+    menus: []
   },
 
   mutations: {
@@ -40,6 +41,9 @@ const user = {
     },
     SET_ROLES: (state, roles) => {
       state.roles = roles
+    },
+    SET_MENUS: (state, menus) => {
+      state.menus = menus
     }
   },
 
@@ -135,6 +139,10 @@ const user = {
           resolve()
         })
       })
+    },
+    // 获取菜单
+    GetMenus() {
+
     }
   }
 }

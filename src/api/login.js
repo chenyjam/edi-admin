@@ -29,3 +29,10 @@ export function registerVisitor() {
   })
 }
 
+export function getMenus() {
+  return request({
+    url: '/sys/menu/getMenus',
+    method: 'get'
+  })
+}
+
